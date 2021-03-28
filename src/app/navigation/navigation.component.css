@@ -1,0 +1,7 @@
+.icon {
+    height: 120px;
+    width: 120px;
+    display: block;
+    clip-path:ellipse(50% 50%);
+     }
+
