@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { Todo } from '../model/todo';
 import { TodoService } from '../services/todo.service';
@@ -12,6 +12,7 @@ export class TodoComponent implements OnInit {
    todo = new Todo();
    todos: Todo[];
    tentative='';
+   color='lightblue';
   constructor(private todoService: TodoService,
     private router: Router) { }
 
@@ -41,6 +42,13 @@ export class TodoComponent implements OnInit {
     } else{
       this.tentative='Veuillez Réessayer';
     }
+  }
+
+  goToColor(){
+    const LINK =['color', this.color];
+    
+      this.router.navigate(LINK);
+    
   }
 
 }

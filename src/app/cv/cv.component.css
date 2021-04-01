@@ -1,0 +1,11 @@
+
+.a{
+    text-align: center;
+    color: whitesmoke;
+    background-color:rgb(255, 30, 180);
+    border: 2px solid whitesmoke;
+  border-radius: 5px;
+  max-width: 1500px;
+  height: 40px;
+
+}

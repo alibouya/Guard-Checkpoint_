@@ -12,7 +12,12 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { CompComponent } from './comp/comp.component';
 import { HeaderComponent } from './header/header.component';
 import { MiniWordComponent } from './miniword/miniword.component';
-
+import { DetailComponent} from './detail/detail.component';
+import { ListComponent } from './list/list.component';
+import { ItemComponent } from './item/item.component';
+import { RouterSimulatorComponent } from './router-simulator/router-simulator.component';
+import { SayHelloComponent } from './say-hello/say-hello.component';
+import { ColorComponent } from './color/color.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +27,13 @@ import { MiniWordComponent } from './miniword/miniword.component';
     NavigationComponent,
     CompComponent,
     HeaderComponent,
-    MiniWordComponent
+    MiniWordComponent,
+    DetailComponent,
+    ListComponent,
+    ItemComponent,
+    RouterSimulatorComponent,
+    SayHelloComponent,
+    ColorComponent
     
   ],
   imports: [

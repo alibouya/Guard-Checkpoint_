@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-miniword',
+  selector: 'app-mini-word',
   templateUrl: './miniword.component.html',
   styleUrls: ['./miniword.component.css']
 })
