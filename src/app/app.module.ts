@@ -18,6 +18,14 @@ import { ItemComponent } from './item/item.component';
 import { RouterSimulatorComponent } from './router-simulator/router-simulator.component';
 import { SayHelloComponent } from './say-hello/say-hello.component';
 import { ColorComponent } from './color/color.component';
+import { AddPersonComponent } from './add-person/add-person.component';
+import { FrontComponent } from './front/front.component';
+import { BackComponent } from './back/back.component';
+import { ErrorcomponentComponent } from './errorcomponent/errorcomponent.component';
+import { NF404Component } from './nf404/nf404.component';
+import { LemassiffComponent } from './lemassiff/lemassiff.component';
+import { EmbaucheComponent } from './embauche/embauche.component';
+import { DetailPersonComponent } from './detail-person/detail-person.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +41,15 @@ import { ColorComponent } from './color/color.component';
     ItemComponent,
     RouterSimulatorComponent,
     SayHelloComponent,
-    ColorComponent
+    ColorComponent,
+    AddPersonComponent,
+    FrontComponent,
+    BackComponent,
+    ErrorcomponentComponent,
+    NF404Component,
+    LemassiffComponent,
+    EmbaucheComponent,
+    DetailPersonComponent
     
   ],
   imports: [
