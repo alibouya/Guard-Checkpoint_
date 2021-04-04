@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CvService } from '../cv.service';
 import { Personne } from '../model';
+const LINK= ['cv'];
 
 @Component({
   selector: 'app-detail-person',
@@ -10,21 +11,25 @@ import { Personne } from '../model';
 })
 export class DetailPersonComponent implements OnInit {
   personne : Personne =new Personne();
+
   constructor(private activatedRoute: ActivatedRoute,
      private cvservice:CvService,
      private router: Router) { }
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe((params)=>{
-
+    console.log(params);
     this.personne=this.cvservice.getPersonneById(params.id);
     console.log(this.personne)
-    // if(!this.personne){
-    //   const LINK= ['cv'];
-    //   this.router.navigate(LINK);
+     if(!this.personne){
+       this.router.navigate(LINK);
 
-    // }
+     }
     })
   }
-
+  deletePersonne(){
+   if(this.cvservice.deletePersonne(this.personne)) {
+     this.router.navigate(LINK)
+   }
+  }
 }

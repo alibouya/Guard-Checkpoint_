@@ -1,20 +1,22 @@
-<p>detail-person works!</p>
 <div class="container">
-    <ul class="list-group">
-        <li class="list-group-item">Informations</li>
-        <!-- <img src="{{personne?.photo}}" 
+    <img src="{{personne?.photo}}" 
         width="150px"
         height="150px"
-        class="rounded-circle": {{personne?.id}}{{personne?.name}}: {{personne?.firstname}}: {{personne?.job}}
-        alt="{{personne?.name}}": {{personne?.age}}: {{personne?.cin}}
-        > -->
-        <li class="list-group-item">ID  {{personne.id}}</li>
+        class="rounded-circle"
+        alt=""
+        >
+    <ul class="list-group">
+        <li class="list-group-item">Informations de : {{personne?.name}} {{  personne?.firstname}}</li>
+        
+        <li class="list-group-item">ID : {{personne.id}}</li>
         <li class="list-group-item">Name:  {{personne?.name}}</li>
-        <li class="list-group-item">Fistname</li>
-        <li class="list-group-item">Job </li>
-        <li class="list-group-item">Age</li>
-        <li class="list-group-item">CIN </li>
+        <li class="list-group-item">Fistname :{{personne?.firstname}}</li>
+        <li class="list-group-item">Job : {{personne?.job}} </li>
+        <li class="list-group-item">Age :{{personne?.age}}</li>
+        <li class="list-group-item">CIN  :  {{personne?.cin}} </li>
 
       </ul>
-      <button class="btn btn danger">delete</button>
+      <button type="button" class="btn btn-danger" 
+      (click)="deletePersonne()"
+      class="btn btn danger" >delete</button>
 </div>

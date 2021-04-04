@@ -1,5 +1,5 @@
 
-<div class="card-container" >
+<div class="card-container">
     <div >les détails candidat<br>
    <!-- <img class="img-circle" src='{{pers1.photo }}'/>
 
@@ -25,7 +25,7 @@
  <div class="front">
    
      <div class="user">
-         <img class="img-circle" src="{{pers1.photo }}" />
+         <img class="img-circle" src='{{pers1.photo }}' />
      </div>
      <div class="content">
          <div class="main">
@@ -76,14 +76,14 @@
      </div>
      <div class="footer">
          <div class="social-links text-center">
-             <a href="https://creative-tim.com" class="facebook"><i class="fa fa-facebook fa-fw"></i></a>
-             <a href="https://creative-tim.com" class="google"><i
-                     class="fa fa-google-plus fa-fw"></i></a>
-             <a href="https://creative-tim.com" class="twitter"><i class="fa fa-twitter fa-fw"></i></a>
+            <button class="btn btn primary" (click)="embaucher()" >
+                Embaucher
+                </button>
+                <button class="btn btn black"(click)="goTodetails()">
+                    Détails
+                </button>
          </div>
      </div>
  </div>
 </div> 
-</div>   
-
-
+</div>
