@@ -1,0 +1,45 @@
+<form #monFormulaire="ngForm">
+   <input 
+   type="text" 
+   name="monInput"
+   #monPremierInput="ngModel"
+   required
+   ngModel=""
+   class="form-control"
+   minlength="3"
+   maxlength="7"
+   (click)="showInput(monPremierInput)"
+   >
+
+   <input 
+   type="text" 
+   name="monInput2"
+   required
+   pattern="[0-1]?d\{1,2}"
+   ngModel=""
+   class="form-control">
+<button (click)= "processForm(monFormulaire)"class="btn btn-primary">
+    Process
+</button>
+
+<form #monFormulaire="ngForm">
+    <input 
+    type="text" 
+    name="monInput"
+    required
+    ngModel=""
+    class="form-control"
+    minlength="3"
+    maxlength="7"
+    >
+ 
+    <input 
+    type="text" 
+    name="monInput2"
+    required
+    pattern="[0-1]?d\{1,2}"
+    ngModel=""
+    class="form-control">
+ <button (click)= "processForm(monFormulaire)"class="btn btn-primary">
+     Login
+ </button>

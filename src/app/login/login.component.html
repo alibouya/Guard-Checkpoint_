@@ -1,0 +1,32 @@
+    <div class="row">
+      <div class="col">
+        <form #loginForm = "ngForm">
+            Email
+            <input 
+            type="text" 
+            name="email"
+            ngModel
+            required
+            email
+            class="form-control">
+            Password
+            <input 
+            type="password" 
+            name="password"
+            ngModel
+            required
+            
+            class="form-control">
+            
+            <br>
+            <button 
+            [disabled]="loginForm.invalid"
+            (click)="login(loginForm)"
+            class="btn btn-primary">Login</button>
+        
+        </form>
+      </div>
+      <div class="col">
+       
+      </div>
+    </div>

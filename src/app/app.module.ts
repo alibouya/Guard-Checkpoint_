@@ -26,6 +26,8 @@ import { NF404Component } from './nf404/nf404.component';
 import { LemassiffComponent } from './lemassiff/lemassiff.component';
 import { EmbaucheComponent } from './embauche/embauche.component';
 import { DetailPersonComponent } from './detail-person/detail-person.component';
+import { FormsExampleComponent } from './forms-example/forms-example.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +51,9 @@ import { DetailPersonComponent } from './detail-person/detail-person.component';
     NF404Component,
     LemassiffComponent,
     EmbaucheComponent,
-    DetailPersonComponent
+    DetailPersonComponent,
+    FormsExampleComponent,
+    LoginComponent
     
   ],
   imports: [

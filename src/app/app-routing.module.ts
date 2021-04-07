@@ -9,8 +9,10 @@ import { DetailPersonComponent } from './detail-person/detail-person.component';
 import { DetailComponent } from './detail/detail.component';
 import { ErrorcomponentComponent } from './errorcomponent/errorcomponent.component';
 import { FrontComponent } from './front/front.component';
+import { HeaderComponent } from './header/header.component';
 import { ItemComponent } from './item/item.component';
 import { ListComponent } from './list/list.component';
+import { LoginComponent } from './login/login.component';
 import { MiniWordComponent } from './miniword/miniword.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { NF404Component } from './nf404/nf404.component';
@@ -66,8 +68,16 @@ const routes: Routes = [
     component: MiniWordComponent
   },
   {
+    path: 'login',
+    component: LoginComponent
+  },
+  {
     path: 'navbar',
     component: NavigationComponent
+  },
+  {
+    path: 'header',
+    component:HeaderComponent
   },
   {
     path: 'footer',
@@ -78,7 +88,7 @@ const routes: Routes = [
     component: SayHelloComponent
   },
   {
-    path: '', redirectTo:'navbar', pathMatch: 'full'
+    path: '', redirectTo:'header', pathMatch: 'full'
   
   }, {
     path: '**', component: NF404Component
