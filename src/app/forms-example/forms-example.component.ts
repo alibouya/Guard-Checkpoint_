@@ -7,6 +7,8 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./forms-example.component.css']
 })
 export class FormsExampleComponent implements OnInit {
+  var1= 'monPremierInput';
+  var2= 'monSecondInput';
 
   constructor() { }
 
