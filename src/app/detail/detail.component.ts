@@ -1,5 +1,6 @@
 import { Component, Input, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
+import { CvService } from '../cv.service';
 import { EmbaucheService } from '../embauche.service';
 import { Personne } from '../model';
 import { PersonneService } from '../personne.service';
@@ -11,12 +12,12 @@ import { PersonneService } from '../personne.service';
 export class DetailComponent implements OnInit {
  @Input() personne;
  @Input() pers1 ;
-  public perss:Personne;
+  public perss:Personne[];
 
 
 
-  constructor(private embaucheService :EmbaucheService,private router :Router) { 
-    this.perss=this.pers1;
+  constructor(private Cvservice:CvService,private embaucheService :EmbaucheService,private router :Router) { 
+    this.perss=this.Cvservice.getPersonne();
     console.log(this.perss);
     console.log(this.personne);
   }

@@ -25,6 +25,7 @@
 
 // }
 import { Component, OnInit } from '@angular/core';
+import { CvService } from '../cv.service';
 
 @Component({
   selector: 'app-cv',
@@ -33,7 +34,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CvComponent implements OnInit {
    color="pink";
-  constructor() { }
+  constructor(private Cvservice:CvService) { }
 
   ngOnInit(): void {
   }

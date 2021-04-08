@@ -2,6 +2,7 @@
 import { Component, OnInit, Output ,EventEmitter, SecurityContext, Input} from '@angular/core';
 import { PersonneService } from '../personne.service';
 import{Personne} from '.././model'
+import { CvService } from '../cv.service';
 @Component({
   selector: 'app-item',
   templateUrl: './item.component.html',
@@ -12,7 +13,7 @@ export class ItemComponent implements OnInit {
 
   @Input() public personne : Personne ;
   @Output() selectpersonne = new EventEmitter();
-  constructor(){
+  constructor(private Cvservice:CvService){
   }
   
   senddetailtolist(  )

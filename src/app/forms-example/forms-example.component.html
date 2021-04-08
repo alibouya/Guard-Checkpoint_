@@ -1,5 +1,9 @@
 <form #monFormulaire="ngForm">
-   <input 
+   <div
+   ngModelGroup="dataInformations"
+   #dataInformations="ngModelGroup"
+   >
+    <input 
    type="text" 
    name="monInput"
    #monPremierInput="ngModel"
@@ -19,11 +23,24 @@
    [(ngModel)]="var2"
 
    class="form-control">
+</div>
+<div class="alert alert-danger"
+*ngIf="dataInformations.invalid && dataInformations.touched "
+>
+    Veuillez vérifier les deux propriétés
+</div>
+   <input 
+   type="text" 
+   name="monInput3"
+   required
+   ngModel
+   class="form-control">
+
 <button (click)= "processForm(monFormulaire)"class="btn btn-primary">
     Process
 </button>
 
-<form #monFormulaire="ngForm">
+ <!-- <form #monFormulaire="ngForm">
     <input 
     type="text" 
     name="monInput"
@@ -33,8 +50,8 @@
     minlength="3"
     maxlength="7"
     >
- 
-    <input 
+  -->
+    <!-- <input 
     type="text" 
     name="monInput2"
     required
@@ -43,4 +60,4 @@
     class="form-control">
  <button (click)= "processForm(monFormulaire)"class="btn btn-primary">
      Login
- </button>
+ </button>  -->

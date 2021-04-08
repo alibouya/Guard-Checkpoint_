@@ -1,6 +1,21 @@
 <div  class="class container"> 
-    <button  (click)="senddetailtolist() " id="cl1" class="btn btn-primary" 
+    <div>
+    <span  (click)="senddetailtolist() "
     
-    >candidature</button>
+    >
+        {{personne?.firstname}}  {{personne?.name}}
+        <img src="{{personne?.photo}}" 
+        width="150px"
+        height="150px"
+        class="rounded-circle"
+        alt="{{personne?.name}}"
+        >
+    </span>
+</div>
+    <!-- <button  id="cl1" class="btn btn-primary" 
+    
+    >
+   
+</button> -->
 </div>
 <!--  -->

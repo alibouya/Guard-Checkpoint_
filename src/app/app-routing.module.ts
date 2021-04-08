@@ -5,6 +5,8 @@ import { BackComponent } from './back/back.component';
 import { ColorComponent } from './color/color.component';
 import { CompComponent } from './comp/comp.component';
 import { CvComponent } from './cv/cv.component';
+import { AddComponent } from './cv/add/add.component';
+
 import { DetailPersonComponent } from './detail-person/detail-person.component';
 import { DetailComponent } from './detail/detail.component';
 import { ErrorcomponentComponent } from './errorcomponent/errorcomponent.component';
@@ -27,6 +29,9 @@ const routes: Routes = [
       
       {path : '',component: CvComponent},
       {
+        path: 'add',component: AddComponent
+      },
+      {
         path: ':id',component: DetailPersonComponent
       },
     {
@@ -38,9 +43,7 @@ const routes: Routes = [
     {
       path: 'detail',component: DetailComponent
     },
-    {
-      path: 'add',component: AddPersonComponent
-    },
+    
     
     ],
   },

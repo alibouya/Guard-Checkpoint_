@@ -1,0 +1,55 @@
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <form #personneForm="ngForm">
+               
+
+                Name
+                <input ngModel required name="name" type="text" class="form-control">
+                <br>
+                Firstname
+                <input ngModel required name="firstname" type="text" class="form-control">
+                <br>
+                Job
+                <input ngModel name="job" type="text" class="form-control">
+                <br>
+                Photo
+                <input ngModel name="photo"               
+                #file type="file" 
+                accept='image/*'
+                (change)="preview(file.files)"
+                class="form-control">
+                <br>
+           
+                Path
+                <input ngModel name="path" type="text" class="form-control">
+                <br>
+            
+                Age
+                <input ngModel name="age" required pattern="[0-1]?\d{1,2}" type="number" class="form-control">
+                <br>
+                CIN
+                <input ngModel required name="number" type="text" class="form-control">
+            
+            
+            
+                <!--  <label for="formGroupExampleInput">Décrivez nous votre travail</label>
+                <input [(ngModel)]="motscles" type="text" class="form-control" id="formGroupExampleInput"
+                    placeholder="Mots Clés">
+                <label for="formGroupExampleInput">Mots Clés de votre travail</label>
+                <input [(ngModel)]="motscles1"type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input"> -->
+            </form>
+            
+            <button class="btn btn-primary"
+            [disabled]="personneForm.invalid"
+            (click)="addPersonne(personneForm.value)"
+            >
+                Add Personne
+            </button>
+        </div>
+        <div class="col">
+            
+        </div>
+    </div>
+   
+</div>

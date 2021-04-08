@@ -28,6 +28,7 @@ import { EmbaucheComponent } from './embauche/embauche.component';
 import { DetailPersonComponent } from './detail-person/detail-person.component';
 import { FormsExampleComponent } from './forms-example/forms-example.component';
 import { LoginComponent } from './login/login.component';
+import { AddComponent } from './cv/add/add.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,8 @@ import { LoginComponent } from './login/login.component';
     EmbaucheComponent,
     DetailPersonComponent,
     FormsExampleComponent,
-    LoginComponent
+    LoginComponent,
+    AddComponent
     
   ],
   imports: [

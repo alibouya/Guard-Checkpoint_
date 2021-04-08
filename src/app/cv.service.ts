@@ -32,4 +32,10 @@ private personnes:Personne[];
     return 1;
   }
   }
+  addPersonne(personne:Personne){
+    const id = this.personnes[this.personnes.length - 1].id;
+    personne.id= id +1;
+    this.personnes.push(personne);
+    console.log(this.personnes)
+  }
 }
