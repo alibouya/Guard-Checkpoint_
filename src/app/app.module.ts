@@ -29,6 +29,9 @@ import { DetailPersonComponent } from './detail-person/detail-person.component';
 import { FormsExampleComponent } from './forms-example/forms-example.component';
 import { LoginComponent } from './login/login.component';
 import { AddComponent } from './cv/add/add.component';
+import { AsyncProgComponent } from './asyncProg/async-prog/async-prog.component';
+import { ObservableComponent } from './asyncProg/observable/observable.component';
+import { SliderobservableComponent } from './asyncProg/sliderobservable/sliderobservable.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +58,10 @@ import { AddComponent } from './cv/add/add.component';
     DetailPersonComponent,
     FormsExampleComponent,
     LoginComponent,
-    AddComponent
+    AddComponent,
+    AsyncProgComponent,
+    ObservableComponent,
+    SliderobservableComponent
     
   ],
   imports: [

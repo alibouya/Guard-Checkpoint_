@@ -20,6 +20,7 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { NF404Component } from './nf404/nf404.component';
 import { SayHelloComponent } from './say-hello/say-hello.component';
 import { TodoComponent } from './todo/todo.component';
+import { AsyncProgComponent } from './asyncProg/async-prog/async-prog.component';
 
 const routes: Routes = [
  
@@ -46,6 +47,9 @@ const routes: Routes = [
     
     
     ],
+  },{
+    path: 'asynch',
+    component: AsyncProgComponent
   },
   
     {
