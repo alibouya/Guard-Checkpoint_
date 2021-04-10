@@ -17,18 +17,19 @@
         >
             <!-- {{pers1.id}} -->
             <app-item 
-            (selectpersonne)="receivedetailfromitem1($event)"
+           
              *ngFor="let selpersonne of personnes" 
              [personne]="selpersonne" 
             >
                 
             </app-item>
-            
+                         <!-- (selectpersonne)="receivedetailfromitem1($event)" -->
+
           
 
         </div>
         <div id="global2" class="col">
-            <app-detail [pers1]="selectpersonne"></app-detail>
+            <app-detail ></app-detail>
         </div>
     </div>
     <!-- <p (click)="send(pers1[0])>candidat N° {{pers1[0].id }} <p/> -->

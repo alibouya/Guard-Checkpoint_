@@ -16,13 +16,17 @@ export class DetailComponent implements OnInit {
 
 
 
-  constructor(private Cvservice:CvService,private embaucheService :EmbaucheService,private router :Router) { 
+  constructor(private Cvservice:CvService,private embaucheService :EmbaucheService,
+    private router :Router) { 
     this.perss=this.Cvservice.getPersonne();
     console.log(this.perss);
   }
 
   ngOnInit(): void {
-    
+    this.Cvservice.SelectItemSubject.subscribe((personne)=>{
+      console.log('je vient d\'être notifié par le click d\'une personne' );
+      this.personne=personne;
+    })
    
   }
   

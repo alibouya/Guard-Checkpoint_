@@ -25,16 +25,16 @@ public pers1: Personne;
     
     // ]
   }
-  receivedetailfromitem1(personne:Personne){
-    this.selectpersonne=personne;
-    //console.log(this.selectpersonne);
-    this.pers1=this.selectpersonne;
-    console.log(this.pers1);
+  // receivedetailfromitem1(personne:Personne){
+  //   this.selectpersonne=personne;
+  //   //console.log(this.selectpersonne);
+  //   this.pers1=this.selectpersonne;
+  //   console.log(this.pers1);}
 
     
 
  
-  }
+  
   // receivedetailfromitem2(selectpersonne){
   //   this.pers1=selectpersonne[1];
  

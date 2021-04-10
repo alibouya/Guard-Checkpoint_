@@ -37,5 +37,8 @@ export class CvComponent implements OnInit {
   constructor(private Cvservice:CvService) { }
 
   ngOnInit(): void {
+    this.Cvservice.clickSubject.subscribe((nbClick)=>{console.log(nbClick);
+
+    })
   }
 }

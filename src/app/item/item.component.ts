@@ -12,22 +12,23 @@ export class ItemComponent implements OnInit {
   
 
   @Input() public personne : Personne ;
-  @Output() selectpersonne = new EventEmitter();
+  //@Output() selectpersonne = new EventEmitter();
   constructor(private Cvservice:CvService){
   }
   
   senddetailtolist(  )
   {
-
+    console.log('je clcik sur le item');
     //this.pers[0]=this.Perso1
-    this.selectpersonne.emit(this.personne);
+  //  this.selectpersonne.emit(this.personne);
+  this.Cvservice.clickOnItem(this.personne);
 
 
   }
   
   
   ngOnInit(): void {
-    
+
   }
   setdetailscandidate1(){
    
