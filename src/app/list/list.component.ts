@@ -18,7 +18,12 @@ public pers1: Personne;
   }
   
   ngOnInit(): void {
-    this.personnes = this.Cvservice.getPersonne()
+    this.Cvservice.getPersonne().subscribe((personnes)=>{
+    this.personnes=personnes;
+    },
+    (erreur)=>{this.personnes=this.Cvservice.getFakePersonne();
+alert('probleme de connection , les données sont fakes')  ;  }
+    )
     // [
     //   new Personne('./assets/Photo.jpg',1,'Bouyahya','Ali', 35, 6211295,'Enseignant','https://www.linkedin.com/in/ali-bouyahya-49839b5a/'),
     //  new Personne('./assets/zeneddine.jpg',2,'zeneddine','zidene', 50, 6000295,'Joueur','https://www.linkedin.com/in/zinedine-zidane-a49711195/?originalSubdomain=mx') 

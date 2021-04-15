@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -32,6 +33,7 @@ import { AddComponent } from './cv/add/add.component';
 import { AsyncProgComponent } from './asyncProg/async-prog/async-prog.component';
 import { ObservableComponent } from './asyncProg/observable/observable.component';
 import { SliderobservableComponent } from './asyncProg/sliderobservable/sliderobservable.component';
+import { HttpComponent } from './http/http.component';
 
 @NgModule({
   declarations: [
@@ -61,14 +63,16 @@ import { SliderobservableComponent } from './asyncProg/sliderobservable/sliderob
     AddComponent,
     AsyncProgComponent,
     ObservableComponent,
-    SliderobservableComponent
+    SliderobservableComponent,
+    HttpComponent
     
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    HttpClientModule
 
   ],
   providers: [],

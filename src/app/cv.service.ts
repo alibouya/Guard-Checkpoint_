@@ -1,6 +1,8 @@
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Subject } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { Personne } from './model';
+const API_LINK='https://immense-citadel-91115.herokuapp.com/api/personnes';
 
 @Injectable({
   providedIn: 'root'
@@ -10,21 +12,44 @@ private personnes:Personne[];
 nbClick=0;
 clickSubject=new Subject<number>();
 SelectItemSubject=new Subject<Personne>()
-  constructor() { 
+  Http: any;
+  constructor(private http:HttpClient) { 
     this.personnes = [
        new Personne('./assets/Photo.jpg',1,'Bouyahya','Ali', 35, 6211295,'Enseignant','https://www.linkedin.com/in/ali-bouyahya-49839b5a/'),
         new Personne('./assets/zeneddine.jpg',2,'zeneddine','zidene', 50, 6000295,'Joueur','https://www.linkedin.com/in/zinedine-zidane-a49711195/?originalSubdomain=mx') ,  
       
        ]
   }
-  getPersonne (): Personne[]{
-   return this.personnes;
-  }
+  // getPersonne (): Personne[]{
+  //  return this.personnes;
+  // }
+  getFakePersonne (): Personne[]{
+    return this.personnes;
+   }
+   getPersonne (): Observable<Personne[]>{
+    return this.http.get<Personne[]>(API_LINK)   }
   getPersonneById(id):Personne{
     return this.personnes.find((personne)=>
       personne.id===+id
     );
+    
   }
+
+  getFakePersonneById(id):Personne{
+    return this.personnes.find((personne)=>
+      personne.id===+id
+    );}
+
+    GetPersonneById(id): Observable<Personne>{
+      return this.http.get<Personne>(API_LINK + id);
+      
+      
+    }
+// const API_LINK="http://localhost:4200/cv/1"
+//   GetPersonneById(id):Observable<Personne>{
+// const headers=new HttpHeaders().set('Authorization','Ali')
+//    return this.Http.get<Personne>(this.API_LINK+id,{headers})
+//   }
   deletePersonne(personne : Personne){
   const index = this.personnes.indexOf(personne);
   if(index===-1){

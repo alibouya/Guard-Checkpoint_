@@ -18,8 +18,8 @@ export class DetailComponent implements OnInit {
 
   constructor(private Cvservice:CvService,private embaucheService :EmbaucheService,
     private router :Router) { 
-    this.perss=this.Cvservice.getPersonne();
-    console.log(this.perss);
+    this.Cvservice.getPersonne();
+    //console.log(this.perss);
   }
 
   ngOnInit(): void {
