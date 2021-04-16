@@ -1,8 +1,8 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
 import { Personne } from './model';
-const API_LINK='https://immense-citadel-91115.herokuapp.com/api/personnes';
+const API_LINK='https://immense-citadel-91115.herokuapp.com/api/personnes/1219';
 
 @Injectable({
   providedIn: 'root'
@@ -15,8 +15,8 @@ SelectItemSubject=new Subject<Personne>()
   Http: any;
   constructor(private http:HttpClient) { 
     this.personnes = [
-       new Personne('./assets/Photo.jpg',1,'Bouyahya','Ali', 35, 6211295,'Enseignant','https://www.linkedin.com/in/ali-bouyahya-49839b5a/'),
-        new Personne('./assets/zeneddine.jpg',2,'zeneddine','zidene', 50, 6000295,'Joueur','https://www.linkedin.com/in/zinedine-zidane-a49711195/?originalSubdomain=mx') ,  
+       new Personne(1,'Bouyahya','Ali', 35, 6211295,'Enseignant','./assets/Photo.jpg'),
+        new Personne(2,'zeneddine','zidene', 50, 6000295,'Joueur','./assets/zeneddine.jpg')   
       
        ]
   }
@@ -41,7 +41,9 @@ SelectItemSubject=new Subject<Personne>()
     );}
 
     GetPersonneById(id): Observable<Personne>{
-      return this.http.get<Personne>(API_LINK + id);
+      const headers=new HttpHeaders().set('Authorization','aymen');
+      const params = new HttpParams().set('code acces','123456789').set('age','37');
+      return this.http.get<Personne>(API_LINK + id,{headers,params});
       
       
     }
@@ -61,11 +63,21 @@ SelectItemSubject=new Subject<Personne>()
     return 1;
   }
   }
-  addPersonne(personne:Personne){
+  addFakePersonne(personne:Personne){
     const id = this.personnes[this.personnes.length - 1].id;
     personne.id= id +1;
     this.personnes.push(personne);
     console.log(this.personnes)
+  }
+
+  addPersonne(personne:Personne){
+    const token=localStorage.getItem('token');
+    if(token){
+
+      const headers=new HttpHeaders().set('Authorization','token');
+    return this.http.post(API_LINK, personne,{headers});
+    }
+    return this.http.post(API_LINK, personne);
   }
   click(){
     this.nbClick ++;

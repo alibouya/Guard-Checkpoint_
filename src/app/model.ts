@@ -1,5 +1,5 @@
 export class Personne {
-    photo: string;
+   // photo: string;
     id: number;
     name: string;
     firstname: string;
@@ -7,7 +7,7 @@ export class Personne {
     cin: number;
     job: string;
     path: string;
-    constructor(photo: string = '',
+    constructor(//photo: string = '',
       id: number = 0,
       name: string = '',
       firstname: string = '',
@@ -15,7 +15,7 @@ export class Personne {
       cin: number = 0,
       job: string = '',
       path: string = '') {
-      this.photo = photo;
+    //  this.photo = photo;
       this.id = id;
       this.name = name;
       this.firstname = firstname;

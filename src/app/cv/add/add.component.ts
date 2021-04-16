@@ -16,10 +16,17 @@ export class AddComponent implements OnInit {
   ngOnInit(): void {
   }
   addPersonne(personne:Personne){
-    const LINK=['cv']
 
-this.Cvservice.addPersonne(personne);
-this.router.navigate(LINK);
+this.Cvservice.addPersonne(personne).subscribe((success)=>{
+   console.log(success);
+  const LINK=['cv']
+
+  this.router.navigate(LINK);
+
+},
+(erreur)=>   console.log(erreur)
+
+);
 }
 preview(value){
 

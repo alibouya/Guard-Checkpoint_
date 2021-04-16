@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthenticationService } from '../authentication.service';
 
 @Component({
   selector: 'app-login',
@@ -7,11 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
   email
-  constructor() { }
+  constructor(private authenticationService:AuthenticationService, private router: Router) { }
 
   ngOnInit(): void {
   }
   login(loginForm){
-    console.log(loginForm);
+    this.authenticationService.login(loginForm).subscribe(
+      (data)=>{localStorage.setItem("token",data.id);
+    this.router.navigate(['cv'])
+    },
+      (erreur)=>console.log(erreur)
+      )
+   // console.log(loginForm.value);
   }
 }

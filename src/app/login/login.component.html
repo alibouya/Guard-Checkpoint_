@@ -22,14 +22,14 @@
             name="password"
             ngModel
             required
-            minlength="6"
+            minlength="4"
             class="form-control"
             #password="ngModel">
             <div
             *ngIf="password.invalid && password.touched"
             class="alert alert-danger"
             >
-            votre password est incorrect il doit avoir au minimum 6 caractères
+            votre password est incorrect il doit avoir au minimum 4 caractères
             </div>
             <br>
             <button 

@@ -12,7 +12,7 @@
           >Cv</a>
         </li>
 
-        <li class="nav-item">
+        <li class="nav-item" *ngIf="authenticationservice.isAuthenticated()">
           <a class="nav-link " [routerLink]="['cv/add']"
           routerLinkActive="activate"
           >Add Personne</a>

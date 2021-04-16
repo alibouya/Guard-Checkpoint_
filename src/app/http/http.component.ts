@@ -1,5 +1,6 @@
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { AuthenticationService } from '../authentication.service';
 const API_LINK='https://jsonplaceholder.typicode.com/users';
 const API_LINK1='https://jsonplaceholder.typicode.com/posts';
 
@@ -10,7 +11,9 @@ const API_LINK1='https://jsonplaceholder.typicode.com/posts';
 })
 export class HttpComponent implements OnInit {
    th:any
-  constructor(private http:HttpClient) { }
+  constructor(private http:HttpClient) { 
+
+  }
 
   ngOnInit(): void {
    this.http.get(API_LINK).subscribe((datas)=> console.log(datas)),(errors)=>console.log(errors)
