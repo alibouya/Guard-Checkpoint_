@@ -33,13 +33,19 @@
           routerLinkActive="activate">Color</a>
         </li>
 
-        <li class="nav-item">
+        <li class="nav-item" *ngIf="!authenticationservice.isAuthenticated()">
           <a class="nav-link " [routerLink]="['login']"
           routerLinkActive="activate">Login</a>
         </li>
+        
         <li class="nav-item">
           <a class="nav-link " [routerLink]="['asynch']"
           routerLinkActive="activate">Asynch</a>
+        </li>
+        <li class="nav-item" *ngIf="authenticationservice.isAuthenticated()">
+          <a class="nav-link "
+          (click)="logout()"
+          >Logout</a>
         </li>
 
       </ul>

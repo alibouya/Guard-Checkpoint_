@@ -21,6 +21,9 @@ import { NF404Component } from './nf404/nf404.component';
 import { SayHelloComponent } from './say-hello/say-hello.component';
 import { TodoComponent } from './todo/todo.component';
 import { AsyncProgComponent } from './asyncProg/async-prog/async-prog.component';
+import { ExampleguardGuard } from './Guards/exampleguard.guard';
+import { AuthGuard } from './cv/guards/auth.guard';
+import { NotloggedGuard } from './cv/guards/notlogged.guard';
 
 const routes: Routes = [
  
@@ -30,7 +33,8 @@ const routes: Routes = [
       
       {path : '',component: CvComponent},
       {
-        path: 'add',component: AddComponent
+        path: 'add',component: AddComponent,
+        canActivate:[AuthGuard]
       },
       {
         path: ':id',component: DetailPersonComponent
@@ -66,17 +70,23 @@ const routes: Routes = [
       children :[
         {
           path: 'todo',
-          component: TodoComponent
+          component: TodoComponent,
+          canActivate:[ExampleguardGuard]
         }]
     },
-  
+    {
+      path: 'todo',
+      component: TodoComponent,
+      canActivate:[ExampleguardGuard]
+    },
   {
     path: 'miniword',
     component: MiniWordComponent
   },
   {
     path: 'login',
-    component: LoginComponent
+    component: LoginComponent,
+    canActivate:[NotloggedGuard]
   },
   {
     path: 'navbar',

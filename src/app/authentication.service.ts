@@ -14,4 +14,7 @@ export class AuthenticationService {
   login(credentials){
      return this.Http.post<any>(API_AUTH_LINK,credentials)
    }
+   logout(){
+   localStorage.removeItem('token');
+  }
 }
